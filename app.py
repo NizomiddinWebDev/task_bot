@@ -17,7 +17,10 @@ async def noon_print():
     btn = await yes_no_btn()
     groups = await getGroupList()
     for group in groups:
-        await bot.send_message(group.chat_id, "Assalomu alaykum\nBlaze tizimimizdan foydalanayapsizmi?",reply_markup=btn)
+        try:
+            await bot.send_message(group.chat_id, "Assalomu alaykum\nBlaze tizimimizdan foydalanayapsizmi?",reply_markup=btn)
+        except:
+            print("error")
 
 
 async def scheduler():
